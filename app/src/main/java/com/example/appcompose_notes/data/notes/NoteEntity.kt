@@ -10,9 +10,9 @@ data class NoteEntity(
     @PrimaryKey val uid: Int,
     @ColumnInfo(name = "tileNote") val titleNote: String,
     @ColumnInfo(name = "bodyNote") val bodyNote: String,
-    @ColumnInfo(name = "bodyDate") val bodyDate: String,
-    @ColumnInfo(name = "TaskId") val taskId: Long?,
-    @ColumnInfo(name = "locationNote") val locationNote: String?
+    //@ColumnInfo(name = "dateNote") val bodyDate: String?,
+    //@ColumnInfo(name = "TaskId") val taskId: Long?,
+    //@ColumnInfo(name = "locationNote") val locationNote: String?
 
 )
 
