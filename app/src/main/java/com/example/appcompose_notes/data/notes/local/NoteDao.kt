@@ -1,10 +1,11 @@
-package com.example.appcompose_notes.data.notes
+package com.example.appcompose_notes.data.notes.local
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import com.example.appcompose_notes.data.notes.model.NoteEntity
 import com.example.appcompose_notes.utils.Constants
 
 @Dao

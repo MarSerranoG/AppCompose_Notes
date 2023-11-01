@@ -1,4 +1,4 @@
-package com.example.appcompose_notes.data.tasks
+package com.example.appcompose_notes.data.tasks.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -10,6 +10,6 @@ data class TaskEntity(
     @PrimaryKey val uid: Int,
     @ColumnInfo(name = "tileTask") val titleTask: String,
     @ColumnInfo(name = "bodyTask") val bodyTask: String,
-    @ColumnInfo(name = "locationTask") val locationTask: String?
+    //@ColumnInfo(name = "locationTask") val locationTask: String?
 )
 

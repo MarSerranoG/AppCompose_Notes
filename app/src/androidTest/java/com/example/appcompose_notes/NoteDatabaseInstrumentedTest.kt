@@ -4,9 +4,11 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.appcompose_notes.data.notes.NoteDao
-import com.example.appcompose_notes.data.notes.NoteDatabase
-import com.example.appcompose_notes.data.notes.NoteEntity
+import com.example.appcompose_notes.data.notes.local.NoteDao
+import com.example.appcompose_notes.data.notes.local.NoteDatabase
+import com.example.appcompose_notes.data.notes.model.NoteEntity
+import com.example.appcompose_notes.data.tasks.local.TaskDao
+import com.example.appcompose_notes.data.tasks.model.TaskEntity
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -23,7 +25,8 @@ class SimpleEntityReadWriteTest {
     fun createDb() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = Room.inMemoryDatabaseBuilder(
-            context, NoteDatabase:: class.java).build()
+            context, NoteDatabase::class.java
+        ).build()
         noteDao = db.noteDao()
     }
 
@@ -38,7 +41,7 @@ class SimpleEntityReadWriteTest {
     fun writeNoteAndReadAllNotes() {
         val titleNote = "Viaje"
         //Crear una instancia de notas
-        val noteEntity = NoteEntity(uid = 1, titleNote = titleNote, bodyNote = "Alistar todo" )
+        val noteEntity = NoteEntity(uid = 1, titleNote = titleNote, bodyNote = "Alistar todo")
 
         //insertar
 

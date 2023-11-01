@@ -1,10 +1,11 @@
-package com.example.appcompose_notes.data.tasks
+package com.example.appcompose_notes.data.tasks.local
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import com.example.appcompose_notes.data.tasks.model.TaskEntity
 import com.example.appcompose_notes.utils.Constants
 
 @Dao
@@ -13,7 +14,7 @@ interface TaskDao {
     fun getAll(): List<TaskEntity>
 
     @Insert
-    fun insertAll(taskEntity: TaskEntity)
+    fun insert(taskEntity: TaskEntity)
 
     @Delete
     fun delete(taskEntity: TaskEntity)
