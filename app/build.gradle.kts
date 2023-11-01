@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -53,10 +54,17 @@ android {
 
 dependencies {
     //Room database
-    val roomVersion = "2.5.2"
+    val roomVersion = "2.5.2" // version más estable
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
+
+    //Dagger Hilt
+    val daggerVersion = "2.48"
+    implementation("com.google.dagger:hilt-android:$daggerVersion")
+    ksp("com.google.dagger:hilt-android-compiler:$daggerVersion")
+
+
     //Default dependencies
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
@@ -73,4 +81,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+}
+kapt {
+    correctErrorTypes = true
 }
